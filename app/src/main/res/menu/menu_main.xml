@@ -3,9 +3,9 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="com.booisajerk.moviemonster.MainActivity">
 
-    <item android:id="@+id/action_info"
+    <item android:id="@+id/action_about"
           android:icon="@drawable/ic_info_white"
-          android:title="@string/action_info"
+          android:title="@string/about_title"
           android:orderInCategory="100"
           app:showAsAction="ifRoom"/>
 </menu>
