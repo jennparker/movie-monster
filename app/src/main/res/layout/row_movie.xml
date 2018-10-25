@@ -26,62 +26,21 @@
 
         <TextView
                 android:id="@+id/movieTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
                 card_view:layout_constraintStart_toEndOf="@id/movieImage"
-                android:paddingEnd="@dimen/card_element_padding"
                 android:paddingStart="@dimen/card_element_padding"
-                android:textAppearance="?android:attr/textAppearanceLarge"/>
-
-
-        <TextView
-                android:id="@+id/durationTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/duration_title"
-                android:paddingStart="@dimen/card_element_padding"
-                card_view:layout_constraintStart_toStartOf="@id/movieTitle"
-                card_view:layout_constraintTop_toBottomOf="@id/movieTitle"/>
-
-        <TextView
-                android:id="@+id/movieLength"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingStart="@dimen/card_element_padding"
-                card_view:layout_constraintStart_toEndOf="@id/durationTitle"
-                card_view:layout_constraintTop_toBottomOf="@id/movieTitle"
-                android:textAppearance="?android:attr/textAppearanceSmall"/>
-
-        <TextView
-                android:id="@+id/genreTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/genre_title"
-                card_view:layout_constraintEnd_toStartOf="@id/movieGenre"
-                card_view:layout_constraintTop_toBottomOf="@id/movieTitle"/>
-
-        <TextView
-                android:id="@+id/movieGenre"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:gravity="end"
-                android:paddingEnd="@dimen/card_element_padding"
-                android:paddingStart="@dimen/card_element_padding"
-                card_view:layout_constraintTop_toBottomOf="@id/movieTitle"
-                card_view:layout_constraintEnd_toEndOf="parent"
-                android:textAppearance="?android:attr/textAppearanceSmall"/>
+                android:textAppearance="?android:attr/textAppearanceLarge" android:layout_marginEnd="8dp"
+                card_view:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
                 android:id="@+id/movieOverview"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/duration_title"
                 android:paddingStart="@dimen/card_element_padding"
+                android:paddingEnd="@dimen/card_element_padding"
                 card_view:layout_constraintStart_toStartOf="@id/movieTitle"
-                card_view:layout_constraintTop_toBottomOf="@id/durationTitle"
+                card_view:layout_constraintTop_toBottomOf="@id/movieTitle"
                 card_view:layout_constraintEnd_toEndOf="parent"/>
 
     </android.support.constraint.ConstraintLayout>
