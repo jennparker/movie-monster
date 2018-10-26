@@ -7,9 +7,10 @@
     <string name="movie_db_name">The Movie DB</string>
     <string name="material_design_library_name">Google Material Design Icon Library</string>
     <string name="attribution_title">Attributions</string>
-    <string name="about_text">This app displays a list of the most popular movies as determined by The Movie DB (TMDB).
-        The movies are sorted by popularity from most to least popular. Volley is used to request and retrieve
-        the data from TMDB web api. GSON is used to parse the movie data. Glide is used for image management.</string>
+    <string name="about_text">Movie Moster displays a list of the twenty most popular movies as
+        determined by The Movie DB (TMDB). The movies are displayed by popularity from most to least popular. For each movie, the title, poster,
+        overview, and genre (first listing only) are displayed. Volley is used to request and retrieve the data from
+        TMDB web api. GSON is used to parse the movie data. Glide is used for image management.</string>
     <string name="movie_db_logo_content_description">The Movie DB logo</string>
     <string name="movie_poster_content_desc">movie poster</string>
 </resources>
