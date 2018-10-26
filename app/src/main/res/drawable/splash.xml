@@ -2,12 +2,18 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-            android:drawable="@color/grey"/>
-
+            android:drawable="@color/dark_grey"/>
     <item>
         <bitmap
                 android:gravity="center"
                 android:src="@drawable/mask"/>
+    </item>
+
+    <item android:top="@dimen/screen_margin">
+        <bitmap
+                android:gravity="top"
+                android:tint="@color/red"
+                android:src="@drawable/movie_monster_text"/>
     </item>
 
 </layer-list>

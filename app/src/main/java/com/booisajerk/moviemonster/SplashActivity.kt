@@ -10,13 +10,13 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Show splash screen for 2 seconds.
+        // Show splash screen for 3 seconds.
         // To show the splash only as the app is loading, retain only the intent code.
         val handler = Handler()
         handler.postDelayed({
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
-        }, 2000)
+        }, 3000)
     }
 }
