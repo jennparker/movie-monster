@@ -4,22 +4,46 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.row_movie.view.*
+import android.widget.ImageView
+import android.widget.TextView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 
-class MovieListAdapter(var movieList: List<Movie>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    override fun getItemCount(): Int = movieList.size
+class MovieListAdapter(val movies: List<Movie>) : RecyclerView.Adapter<MovieListAdapter.MovieViewHolder>() {
+    private val IMAGE_BASE_URL = "http://image.tmdb.org/t/p/w500"
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val movie = movieList[position]
-        holder.itemView.movieTitle.text = movie.title
-        holder.itemView.movieOverview.text = movie.overview
+
+    override fun getItemCount(): Int {
+        return movies.size
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.row_movie, parent, false))
+    override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
+        holder.bind(movies[position])
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
+        return MovieViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.row_movie, parent, false))
+    }
 
+    inner class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var title: TextView = itemView.findViewById(R.id.movieTitle)
+        var overview: TextView = itemView.findViewById(R.id.movieOverview)
+        var genres: TextView = itemView.findViewById(R.id.movieGenre)
+        var poster: ImageView
+
+        init {
+            poster = itemView.findViewById(R.id.movieImage)
+        }
+
+        fun bind(movie: Movie) {
+            title.text = movie.title
+            overview.text = movie.overview
+            genres.text = ""
+            Glide.with(itemView)
+                .load(IMAGE_BASE_URL + movie.poster_path)
+                .apply(RequestOptions.placeholderOf(R.drawable.monster_mask))
+                .into(poster)
+        }
+    }
 }
