@@ -2,6 +2,8 @@ package com.booisajerk.moviemonster
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.Menu
@@ -35,6 +37,19 @@ class MainActivity : AppCompatActivity() {
         list.layoutManager = staggeredLayoutManager
 
         createRequestQueue()
+
+       // Get SwipeContainerLayout
+        val swipeLayout: SwipeRefreshLayout = findViewById(R.id.swipeContainer)
+        // Add Listener
+        swipeLayout.setOnRefreshListener {
+            // TODO add refresh functionality
+            Toast.makeText(applicationContext, "Add refresh functionality", Toast.LENGTH_LONG).show()
+
+            Handler().postDelayed({
+                // Stop animation (after 3 seconds)
+                swipeLayout.isRefreshing = false
+            }, 3000)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -58,7 +73,7 @@ class MainActivity : AppCompatActivity() {
         // Get the RequestQueue instance
         val queue = MyRequestQueue.getInstance(this.applicationContext).requestQueue
 
-        // Formulate the request and handle the response.
+        // Create the request and handle the response.
         val stringRequest = StringRequest(Request.Method.GET,
             MOVIE_API_URI + MOVIE_SORT_ORDER + MOVIE_API_KEY,
             Listener<String> { response ->
