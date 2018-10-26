@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Movie Monster</string>
     <string name="about_title">About this app</string>
-
     <string name="tmdb_attribution">Movie data generously provided by The Movie DB</string>
     <string name="material_icon_attribution">Material Design Icons provided free of charge under Apache License
     version 2.0 https://www.apache.org/licenses/LICENSE-2.0.html</string>
@@ -10,9 +9,7 @@
     <string name="attribution_title">Attributions</string>
     <string name="about_text">This app displays a list of the most popular movies as determined by The Movie DB (TMDB).
         The movies are sorted by popularity from most to least popular. Volley is used to request and retrieve
-        the data from TMDB web api. GSON is used to parse the movie data. Glide is used for image management.
-    </string>
+        the data from TMDB web api. GSON is used to parse the movie data. Glide is used for image management.</string>
     <string name="movie_db_logo_content_description">The Movie DB logo</string>
-    <string name="duration_title">Duration:</string>
-    <string name="genre_title">Genre:</string>
+    <string name="movie_poster_content_desc">movie poster</string>
 </resources>

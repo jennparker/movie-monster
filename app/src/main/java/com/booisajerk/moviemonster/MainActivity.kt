@@ -24,10 +24,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var gson: Gson
     private val resultMovieList: ArrayList<Movie> = ArrayList()
 
-    private val MOVIE_API_URI: String = "https://api.themoviedb.org/3/discover/movie?"
-    private val MOVIE_SORT_ORDER: String = "popularity.desc/popular"
-    private val MOVIE_API_KEY: String = "&api_key=be309903dd5028b9fd14f39a337ebdfd"
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -38,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         createRequestQueue()
 
-       // Get SwipeContainerLayout
+        // Get SwipeContainerLayout
         val swipeLayout: SwipeRefreshLayout = findViewById(R.id.swipeContainer)
         // Add Listener
         swipeLayout.setOnRefreshListener {
@@ -68,14 +64,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun createRequestQueue() {
+    private fun createRequestQueue() {
 
         // Get the RequestQueue instance
         val queue = MyRequestQueue.getInstance(this.applicationContext).requestQueue
 
         // Create the request and handle the response.
-        val stringRequest = StringRequest(Request.Method.GET,
-            MOVIE_API_URI + MOVIE_SORT_ORDER + MOVIE_API_KEY,
+        val movieRequest = StringRequest(Request.Method.GET,
+            Constants.MOVIE_BASE_URL + Constants.MOVIE_SORT_ORDER + Constants.MOVIE_API_KEY,
             Listener<String> { response ->
 
                 gson = GsonBuilder().create()
@@ -83,7 +79,7 @@ class MainActivity : AppCompatActivity() {
 
                 if (moviesList.totalResults > 0) {
 
-                    var movieCount: Int = moviesList.movies!!.size
+                    val movieCount: Int = moviesList.movies!!.size
 
                     for (i in 0 until movieCount) {
                         val title = moviesList.movies!![i].title
@@ -100,10 +96,13 @@ class MainActivity : AppCompatActivity() {
             },
             Response.ErrorListener { error ->
                 // Handle error
-                Toast.makeText(this@MainActivity, "ERROR: %s".format(error.toString()), Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@MainActivity, "Don't forget to enter your key in Constants.kt? ERROR: %s"
+                        .format(error.toString()), Toast.LENGTH_LONG
+                ).show()
             })
 
         // Add the request to the RequestQueue.
-        queue.add(stringRequest)
+        queue.add(movieRequest)
     }
 }

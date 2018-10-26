@@ -1,14 +1,24 @@
 package com.booisajerk.moviemonster
 
-class MoviesList {
-    var page: Int = 0
-    var results: ArrayList<ResultMovie>? = null
-    var total_pages: Int = 0
-    var total_results: Int = 0
+import com.google.gson.annotations.Expose
+import com.google.gson.annotations.SerializedName
 
-    inner class ResultMovie {
-        var id: Int = 0
-        var title: String = ""
-        var overview: String = ""
-    }
+class MoviesList {
+
+    @SerializedName("page")
+    @Expose
+    var page: Int = 0
+
+    @SerializedName("total_results")
+    @Expose
+    var totalResults: Int = 0
+
+    @SerializedName("results")
+    @Expose
+    var movies: List<Movie>? = null
+
+    @SerializedName("total_pages")
+    @Expose
+    var totalPages: Int = 0
+
 }

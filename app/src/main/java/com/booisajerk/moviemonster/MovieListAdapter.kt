@@ -1,6 +1,5 @@
 package com.booisajerk.moviemonster
 
-import android.provider.Settings.Global.getString
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -10,10 +9,7 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
-
-class MovieListAdapter(val movies: List<Movie>) : RecyclerView.Adapter<MovieListAdapter.MovieViewHolder>() {
-    private val IMAGE_BASE_URL = "http://image.tmdb.org/t/p/w500"
-
+class MovieListAdapter(private val movies: List<Movie>) : RecyclerView.Adapter<MovieListAdapter.MovieViewHolder>() {
 
     override fun getItemCount(): Int {
         return movies.size
@@ -28,21 +24,17 @@ class MovieListAdapter(val movies: List<Movie>) : RecyclerView.Adapter<MovieList
     }
 
     inner class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var title: TextView = itemView.findViewById(R.id.movieTitle)
-        var overview: TextView = itemView.findViewById(R.id.movieOverview)
-        var genres: TextView = itemView.findViewById(R.id.movieGenre)
-        var poster: ImageView
-
-        init {
-            poster = itemView.findViewById(R.id.movieImage)
-        }
+        private var title: TextView = itemView.findViewById(R.id.movieTitle)
+        private var overview: TextView = itemView.findViewById(R.id.movieOverview)
+        private var genres: TextView = itemView.findViewById(R.id.movieGenre)
+        private var poster: ImageView = itemView.findViewById(R.id.movieImage)
 
         fun bind(movie: Movie) {
             title.text = movie.title
             overview.text = movie.overview
             genres.text = getGenreStrings(movie)
             Glide.with(itemView)
-                .load(IMAGE_BASE_URL + movie.poster_path)
+                .load(Constants.IMAGE_BASE_URL + movie.poster_path)
                 .apply(RequestOptions.placeholderOf(R.drawable.monster_mask))
                 .into(poster)
         }

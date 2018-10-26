@@ -17,6 +17,7 @@
                 android:id="@+id/movieImage"
                 android:layout_width="150dp"
                 android:layout_height="250dp"
+                android:contentDescription="@string/movie_poster_content_desc"
                 card_view:layout_constraintStart_toStartOf="parent"
                 card_view:layout_constraintTop_toTopOf="parent"
                 card_view:layout_constraintBottom_toBottomOf="parent"
@@ -29,8 +30,8 @@
                 android:layout_height="wrap_content"
                 card_view:layout_constraintStart_toEndOf="@id/movieImage"
                 android:paddingStart="@dimen/card_element_padding"
+                android:paddingEnd="@dimen/card_element_padding"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_marginEnd="8dp"
                 card_view:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
@@ -48,7 +49,8 @@
                 android:id="@+id/movieGenre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingEnd="@dimen/element_padding"
+                android:paddingEnd="@dimen/card_element_padding"
+                android:paddingStart="@dimen/card_element_padding"
                 card_view:layout_constraintEnd_toEndOf="parent"
                 card_view:layout_constraintBottom_toBottomOf="parent"/>
 
