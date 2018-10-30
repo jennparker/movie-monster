@@ -1,9 +1,10 @@
 package com.booisajerk.moviemonster
 
+import com.booisajerk.moviemonster.models.Movie
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class MoviesList {
+class MoviesListResponse {
 
     @SerializedName("page")
     @Expose
@@ -15,7 +16,7 @@ class MoviesList {
 
     @SerializedName("results")
     @Expose
-    var movies: List<Movie>? = null
+    var movies: List<Movie> = emptyList()
 
     @SerializedName("total_pages")
     @Expose

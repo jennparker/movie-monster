@@ -1,11 +1,11 @@
 package com.booisajerk.moviemonster
 
 import android.support.v7.widget.RecyclerView
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.booisajerk.moviemonster.models.Movie
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
@@ -20,7 +20,7 @@ class MovieListAdapter(private val movies: List<Movie>) : RecyclerView.Adapter<M
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
-        return MovieViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.row_movie, parent, false))
+        return MovieViewHolder(parent.inflate(R.layout.row_movie,false))
     }
 
     inner class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

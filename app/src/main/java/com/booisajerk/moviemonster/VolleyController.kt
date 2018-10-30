@@ -5,13 +5,13 @@ import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.Volley
 
-class MyRequestQueue constructor(context: Context) {
+class VolleyController constructor(context: Context) {
     companion object {
         @Volatile
-        private var INSTANCE: MyRequestQueue? = null
+        private var INSTANCE: VolleyController? = null
         fun getInstance(context: Context) =
             INSTANCE ?: synchronized(this) {
-                INSTANCE ?: MyRequestQueue(context).also {
+                INSTANCE ?: VolleyController(context).also {
                     INSTANCE = it
                 }
             }
@@ -20,7 +20,7 @@ class MyRequestQueue constructor(context: Context) {
 
         Volley.newRequestQueue(context.applicationContext)
     }
-    fun <T> addToRequestQueue(req: Request<T>) {
-        requestQueue.add(req)
+    fun <T> addToRequestQueue(request: Request<T>) {
+        requestQueue.add(request)
     }
 }
