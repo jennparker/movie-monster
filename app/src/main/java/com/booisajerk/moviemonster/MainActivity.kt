@@ -19,9 +19,8 @@ import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.IOException
 
-class MainActivity : AppCompatActivity() {
-    private var resultMovieList: ArrayList<Movie> = ArrayList()
-    private lateinit var gson: Gson
+class MainActivity : BaseActivity() {
+
     private lateinit var movieRecyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
