@@ -7,7 +7,6 @@ import com.android.volley.toolbox.Volley
 
 class VolleyController constructor(context: Context) {
     companion object {
-        @Volatile
         private var INSTANCE: VolleyController? = null
         fun getInstance(context: Context) =
             INSTANCE ?: synchronized(this) {
