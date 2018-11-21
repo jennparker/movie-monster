@@ -24,10 +24,10 @@ class MovieListAdapter(private val movies: List<Movie>) : RecyclerView.Adapter<M
     }
 
     inner class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private var title: TextView = itemView.findViewById(R.id.movieTitle)
-        private var overview: TextView = itemView.findViewById(R.id.movieOverview)
-        private var genres: TextView = itemView.findViewById(R.id.movieGenre)
-        private var poster: ImageView = itemView.findViewById(R.id.movieImage)
+        private var title: TextView = itemView.findViewById(R.id.movie_title)
+        private var overview: TextView = itemView.findViewById(R.id.movie_overview)
+        private var genres: TextView = itemView.findViewById(R.id.movie_genre)
+        private var poster: ImageView = itemView.findViewById(R.id.movie_image)
 
         fun bind(movie: Movie) {
             title.text = movie.title

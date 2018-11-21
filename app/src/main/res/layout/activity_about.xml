@@ -9,7 +9,7 @@
         tools:context=".AboutActivity">
 
     <TextView
-            android:id="@+id/aboutText"
+            android:id="@+id/about_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
@@ -21,11 +21,11 @@
             android:id="@+id/divider"
             android:layout_width="fill_parent"
             android:layout_height="1dip"
-            app:layout_constraintTop_toBottomOf="@+id/aboutText"
+            app:layout_constraintTop_toBottomOf="@+id/about_text"
             android:background="@color/light_grey"/>
 
     <TextView
-            android:id="@+id/attributionTitle"
+            android:id="@+id/attribution_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/attribution_title"
@@ -35,27 +35,27 @@
             android:textSize="@dimen/title_text"/>
 
     <TextView
-            android:id="@+id/tmdbTitle"
+            android:id="@+id/tmdb_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/movie_db_name"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/attributionTitle"
+            app:layout_constraintTop_toBottomOf="@id/attribution_title"
             android:textSize="@dimen/subtitle_text"/>
 
     <TextView
-            android:id="@+id/tmdbAttribution"
+            android:id="@+id/tmdb_attribution"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/element_padding"
-            app:layout_constraintTop_toBottomOf="@id/tmdbTitle"
+            app:layout_constraintTop_toBottomOf="@id/tmdb_title"
             app:layout_constraintStart_toStartOf="parent"
             android:text="@string/tmdb_attribution"/>
 
-    <ImageView android:id="@+id/tmdbImage"
+    <ImageView android:id="@+id/tmdb_image"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               app:layout_constraintTop_toBottomOf="@id/tmdbAttribution"
+               app:layout_constraintTop_toBottomOf="@id/tmdb_attribution"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintEnd_toEndOf="parent"
                android:padding="@dimen/element_padding"
@@ -63,19 +63,19 @@
                android:contentDescription="@string/movie_db_logo_content_description"/>
 
     <TextView
-            android:id="@+id/materialIconTitle"
+            android:id="@+id/material_icon_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/material_design_library_name"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tmdbImage"
+            app:layout_constraintTop_toBottomOf="@id/tmdb_image"
             android:textSize="@dimen/subtitle_text"/>
 
     <TextView
-            android:id="@+id/iconAttribution"
+            android:id="@+id/icon_attribution"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/materialIconTitle"
+            app:layout_constraintTop_toBottomOf="@id/material_icon_title"
             app:layout_constraintStart_toStartOf="parent"
             android:text="@string/material_icon_attribution"/>
 

@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         requestMovies()
 
         // Get SwipeContainerLayout
-        val swipeLayout: SwipeRefreshLayout = findViewById(R.id.swipeContainer)
+        val swipeLayout: SwipeRefreshLayout = findViewById(R.id.swipe_container)
 
         // Add Listener
         // TODO finish hooking this up

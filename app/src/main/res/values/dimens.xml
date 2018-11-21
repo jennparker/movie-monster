@@ -14,4 +14,7 @@
     <!--Cards-->
     <dimen name="card_elevation">1dp</dimen>
     <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="expanded_toolbar_height">200dp</dimen>
+    <dimen name="card_width">150dp</dimen>
+    <dimen name="card_height">250dp</dimen>
 </resources>
