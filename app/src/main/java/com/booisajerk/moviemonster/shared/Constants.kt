@@ -1,4 +1,4 @@
-package com.booisajerk.moviemonster
+package com.booisajerk.moviemonster.shared
 
 class Constants {
     companion object {

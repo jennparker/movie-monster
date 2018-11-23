@@ -1,4 +1,4 @@
-package com.booisajerk.moviemonster
+package com.booisajerk.moviemonster.shared
 
 import android.support.annotation.LayoutRes
 import android.view.LayoutInflater

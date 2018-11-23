@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/screen_margin"
-        tools:context=".AboutActivity">
+        tools:context=".view.activities.AboutActivity">
 
     <TextView
             android:id="@+id/about_text"

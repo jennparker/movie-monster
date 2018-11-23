@@ -13,4 +13,7 @@
         TMDB web api. GSON is used to parse the movie data. Glide is used for image management.</string>
     <string name="movie_db_logo_content_description">The Movie DB logo</string>
     <string name="movie_poster_content_desc">movie poster</string>
+    <string name="list_empty_error">The movie list is empty. Please try again later</string>
+    <string name="connection_error">There was a connection error</string>
+    <string name="expanded_image_content_description">Expanded Image</string>
 </resources>

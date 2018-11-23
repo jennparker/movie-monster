@@ -1,6 +1,5 @@
-package com.booisajerk.moviemonster
+package com.booisajerk.moviemonster.models
 
-import com.booisajerk.moviemonster.models.Movie
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 

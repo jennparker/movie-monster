@@ -1,7 +1,8 @@
-package com.booisajerk.moviemonster
+package com.booisajerk.moviemonster.view.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.booisajerk.moviemonster.R
 
 class AboutActivity : AppCompatActivity() {
 

@@ -1,9 +1,10 @@
-package com.booisajerk.moviemonster
+package com.booisajerk.moviemonster.view.activities
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.booisajerk.moviemonster.R
 
 abstract class BaseActivity : AppCompatActivity() {
 
