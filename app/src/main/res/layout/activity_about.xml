@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -22,6 +22,8 @@
             android:layout_width="fill_parent"
             android:layout_height="1dip"
             app:layout_constraintTop_toBottomOf="@+id/about_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             android:background="@color/light_grey"/>
 
     <TextView
@@ -79,4 +81,4 @@
             app:layout_constraintStart_toStartOf="parent"
             android:text="@string/material_icon_attribution"/>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

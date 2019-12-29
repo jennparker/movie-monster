@@ -2,9 +2,9 @@ package com.booisajerk.moviemonster.view.activities
 
 import android.graphics.Color
 import android.os.Bundle
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -16,14 +16,14 @@ import com.booisajerk.moviemonster.view.interfaces.MoviesView
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.IOException
 
-class MainActivity : BaseActivity(), MoviesView, SwipeRefreshLayout.OnRefreshListener {
+class MainActivity : BaseActivity(), MoviesView, androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener {
 
-    private val recyclerView: RecyclerView by lazy {
-        findViewById<RecyclerView>(R.id.recycler_view)
+    private val recyclerView: androidx.recyclerview.widget.RecyclerView by lazy {
+        findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.recycler_view)
     }
 
-    private val swipeRefreshLayout: SwipeRefreshLayout by lazy {
-        findViewById<SwipeRefreshLayout>(R.id.swipe_container)
+    private val swipeRefreshLayout: androidx.swiperefreshlayout.widget.SwipeRefreshLayout by lazy {
+        findViewById<androidx.swiperefreshlayout.widget.SwipeRefreshLayout>(R.id.swipe_container)
     }
 
     private val progressBar: ProgressBar by lazy {
@@ -87,7 +87,8 @@ class MainActivity : BaseActivity(), MoviesView, SwipeRefreshLayout.OnRefreshLis
     }
 
     private fun prepareRecyclerView() {
-        val layoutManager = LinearLayoutManager(this)
+        val layoutManager =
+            androidx.recyclerview.widget.LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
     }
